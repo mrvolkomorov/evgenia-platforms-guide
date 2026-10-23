@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Раздатка №3 — fal.ai и Replicate: как начать работу</title>
+<style>
+:root{--ink:#1a2330;--muted:#5b6673;--line:#dfe4ea;--bg:#f7f8fa;--card:#fff;--accent:#1a4d8f;--accent2:#0f7b6c;--warn:#b8860b;--warnbg:#fff8e6;--free:#0f7b6c;--freebg:#e6f5f2}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+header{background:linear-gradient(135deg,#0b3d6b,#1a4d8f);color:#fff;padding:32px 24px}
+header .wrap{max-width:1080px;margin:0 auto}
+header .badge{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:4px 12px;border-radius:20px;font-size:13px;font-weight:600}
+header h1{font-size:29px;line-height:1.25;margin:14px 0 10px;font-weight:700}
+header p{font-size:16px;opacity:.92;max-width:780px}
+header .meta{font-size:14px;opacity:.8;margin-top:14px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+main{padding:32px 0 56px}
+section{margin-bottom:44px}
+h2{font-size:22px;margin-bottom:8px;font-weight:700}
+h2 + .lead{color:var(--muted);font-size:15px;margin-bottom:18px}
+h3{font-size:17px;margin:24px 0 10px;font-weight:650}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin-bottom:16px}
+.alert{border-left:4px solid var(--warn);background:var(--warnbg);border-radius:0 8px 8px 0}
+.alert strong{color:#8a6100}
+.good{border-left:4px solid var(--accent2);background:var(--freebg);border-radius:0 8px 8px 0}
+.good strong{color:#0b5f53}
+.free-badge{display:inline-block;background:var(--freebg);color:var(--free);font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:4px;border:1px solid #bfe3dc;white-space:nowrap}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:14.5px}
+th{background:#eef1f5;text-align:left;padding:12px 14px;font-weight:650;font-size:13px;color:#3d4753;border-bottom:2px solid var(--line)}
+td{padding:12px 14px;border-bottom:1px solid #eceff2;vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr.pick{background:#f4faf8}
+.mname{font-weight:650}
+.mid{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--muted);word-break:break-all;margin-top:2px}
+.prompt{background:#f4f6f8;border:1px solid #e2e6eb;border-left:3px solid var(--accent);border-radius:0 7px 7px 0;padding:14px 16px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;color:#2b3442;margin:12px 0;white-space:pre-wrap;line-height:1.55}
+.prompt-lbl{font-size:13px;font-weight:650;color:var(--accent);margin:16px 0 4px}
+.steps{counter-reset:st;list-style:none;margin:12px 0;padding-left:0}
+.steps li{counter-increment:st;position:relative;padding-left:38px;margin-bottom:14px}
+.steps li:before{content:counter(st);position:absolute;left:0;top:0;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;font-size:13.5px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.tblwrap{overflow-x:auto;border-radius:10px;border:1px solid var(--line);background:var(--card)}
+.tblwrap table{border:none}
+ul,ol{margin:10px 0 10px 22px}
+li{margin-bottom:7px}
+a{color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:16px 0}
+.mini{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:16px 18px}
+.mini h4{font-size:15px;margin-bottom:6px;color:var(--accent)}
+.mini p{font-size:14px;color:var(--muted)}
+footer{background:#1f2732;color:#9aa5b1;padding:26px 24px;font-size:13.5px}
+footer .wrap{max-width:1080px;margin:0 auto}
+footer a{color:#8fb4e8}
+@media(max-width:640px){header h1{font-size:23px}main{padding:24px 0 40px}th,td{padding:10px 11px;font-size:13.5px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<span class="badge">Раздаточный материал №3</span>
+<h1>fal.ai и Replicate: как начать работу</h1>
+<p>Две площадки, на которых крутятся профессиональные модели. Как зарегистрироваться, что бесплатно, что платно, и как не потерять деньги на тестах.</p>
+<div class="meta">Занятие 2 · 23 октября 2026 · данные проверены 22.10.2026</div>
+</div></header>
+
+<main class="wrap">
+
+<section>
+<div class="card good">
+<strong>Главное правило.</strong> Replicate — для теста и для разовых картинок, fal.ai — для рабочих задач. На Replicate можно зайти без карты, попробовать модель, убедиться, что подходит. На fal.ai — пополнить баланс и работать всерьёз.
+</div>
+</section>
+
+<section>
+<h2>1. Главное отличие</h2>
+<p class="lead">Replicate — это витрина. fal.ai — это рабочая станция.</p>
+<div class="tblwrap"><table>
+<thead><tr><th></th><th>Replicate</th><th>fal.ai</th></tr></thead>
+<tbody>
+<tr class="pick"><td class="mname">Модельный ряд</td><td>Десятки тысяч моделей от сообщества и официальных</td><td>Кураторская подборка популярных моделей</td></tr>
+<tr><td class="mname">Бесплатный режим</td><td>Try for Free: ~12 моделей, запуск без карты</td><td>Стартовый кредит при регистрации, карта нужна</td></tr>
+<tr><td class="mname">Стоимость актуальных моделей</td><td>Одна и та же цена: FLUX 3 Image 1K — $0.024</td><td>Часто дешевле и быстрее: MiniMax H3 Max — $0.025/сек</td></tr>
+<tr><td class="mname">Когда открывать аккаунт</td><td>До занятия. Хотя бы посмотреть интерфейс</td><td>До оплаты за продукцию. Тест можно делать на Replicate</td></tr>
+<tr><td class="mname">Коммерческое использование</td><td>Зависит от модели — проверяйте в карточке</td><td>Зависит от модели — проверяйте в карточке</td></tr>
+</tbody></table></div>
+</section>
+
+<section>
+<h2>2. Replicate — регистрация и Try for Free</h2>
+<ol class="steps">
+<li><strong>Зайдите на replicate.com</strong> и нажмите Sign In в правом верхнем углу</li>
+<li><strong>Войдите через GitHub</strong> — это самый быстрый способ, не нужно заполнять отдельную регистрацию</li>
+<li><strong>Откройте подборку Try for Free</strong>: replicate.com/collections/try-for-free</li>
+<li><strong>Запустите любую модель</strong> — например google/imagen-4 для генерации или flux-kontext-pro для правки</li>
+</ol>
+<p class="prompt-lbl">Что есть в подборке Try for Free на 22.10.2026:</p>
+<div class="tblwrap"><table>
+<thead><tr><th>Задача</th><th>Модель</th></tr></thead>
+<tbody>
+<tr><td>Правка словами</td><td class="mid">black-forest-labs/flux-kontext-pro</td></tr>
+<tr><td>Генерация с нуля</td><td class="mid">google/imagen-4</td></tr>
+<tr><td>Текст на картинке</td><td class="mid">ideogram-ai/ideogram-v3-turbo</td></tr>
+<tr><td>Апскейл</td><td class="mid">topazlabs/image-upscale</td></tr>
+<tr><td>Ремонт лиц</td><td class="mid">sczhou/codeformer, tencentarc/gfpgan</td></tr>
+<tr><td>Перекадрирование видео</td><td class="mid">luma/reframe-video</td></tr>
+</tbody></table></div>
+<div class="card">
+<strong>Сколько бесплатных запусков.</strong> Количество ограничено и периодически меняется. Для теста хватает на 5–10 картинок и пару видеороликов. Если лимит исчерпан — Replicate попросит подключить биллинг.
+</div>
+</section>
+
+<section>
+<h2>3. fal.ai — что нужно знать перед пополнением</h2>
+<p class="lead">fal.ai — основная рабочая площадка для актуальных моделей. Сначала проверьте цены, потом пополняйте.</p>
+<div class="tblwrap"><table>
+<thead><tr><th>Параметр</th><th>Значение</th></tr></thead>
+<tbody>
+<tr class="pick"><td class="mname">Стартовый кредит</td><td>Есть. Точную сумму платформа не публикует — смотреть в личном кабинете после регистрации</td></tr>
+<tr><td class="mname">Стоимость</td><td>Оплата строго по факту использования. Без подписки, без минимального платежа</td></tr>
+<tr><td class="mname">Оплата</td><td>Карта иностранного банка или криптовалюта. Российские карты не подходят</td></tr>
+<tr><td class="mname">Сколько стоит один ролик</td><td>3 кадра по 5 секунд на H3 Max ≈ $0.38</td></tr>
+<tr><td class="mname">Сколько стоит одна картинка</td><td>FLUX 3 Image 1K — $0.024, FLUX 2 Pro — от $0.012</td></tr>
+</tbody></table></div>
+<div class="card alert">
+<strong>Главный вопрос перед пополнением.</strong> Сколько карточек и роликов вы будете делать в месяц? 30 карточек × $0.024 = $0.72 за изображения. 10 роликов × $0.40 = $4 за видео. Пополнение на $10–20 покрывает рабочий месяц для бренда. Ниже — нет смысла, быстро кончится. Выше $50 — это уже производственный объём, и тогда дешевле купить месячный пакет.
+</div>
+</section>
+
+<section>
+<h2>4. Какую карту использовать</h2>
+<p class="lead">fal.ai и Replicate не принимают российские карты напрямую. Варианты для участниц, у которых нет иностранной карты.</p>
+<div class="tblwrap"><table>
+<thead><tr><th>Вариант</th><th>Цена</th><th>Что получает</th></tr></thead>
+<tbody>
+<tr class="pick"><td class="mname">aifory pro</td><td>«Карта для подписок» — 1 290 ₽, «Универсальная» — 2 490 ₽</td><td>Виртуальная карта с иностранным BIN. Промокод aifory-sale. Пополняется в рублях, списывается в долларах</td></tr>
+<tr><td class="mname">Wise</td><td>Комиссия за выпуск и обслуживание</td><td>Мультивалютный счёт. Подходит для регулярной работы</td></tr>
+<tr><td class="mname">Revolut</td><td>Комиссия за выпуск, ежемесячное обслуживание</td><td>Аналог Wise. Подходит для регулярной работы</td></tr>
+<tr><td class="mname">Telegram-кошелёк</td><td>Без комиссии за выпуск</td><td>Криптовалюта. Подходит для единичных платежей</td></tr>
+</tbody></table></div>
+<div class="card">
+<strong>Что выбрать для старта.</strong> aifory pro — самый быстрый путь. Карта выпускается за минуту, пополняется через СБП. Для первых 2–3 месяцев обучения этого достаточно. Если баланс будет расходоваться больше $20/мес — имеет смысл перейти на Wise или Revolut.
+</div>
+</section>
+
+<section>
+<h2>5. Шпаргалка по ценам на fal.ai</h2>
+<p class="lead">Только то, что используется на занятии и в ближайших домашних заданиях. Цены на 22.10.2026.</p>
+<div class="tblwrap"><table>
+<thead><tr><th>Модель</th><th>Цена</th><th>Когда используется</th></tr></thead>
+<tbody>
+<tr class="pick"><td class="mname">FLUX 3 Image 1K</td><td>$0.024</td><td>Фото товара по паспорту изделия</td></tr>
+<tr><td class="mname">FLUX 3 Image 2K</td><td>$0.05</td><td>Когда нужно разрешение выше — для печати или крупного кадра</td></tr>
+<tr><td class="mname">FLUX Kontext Pro</td><td>Replicate бесплатно — лучше оттуда</td><td>Точечная правка словами</td></tr>
+<tr><td class="mname">FLUX Fill Pro</td><td>Replicate $0.05/изображение</td><td>Правка маской</td></tr>
+<tr><td class="mname">Seedream 5.0</td><td>$0.135</td><td>Когда нужно сохранить мелкие детали изделия</td></tr>
+<tr><td class="mname">Nano Banana Pro</td><td>$0.15</td><td>До 14 референсов — для сохранения фирменного стиля</td></tr>
+<tr><td class="mname">MiniMax H3 Max</td><td>от $0.025/сек</td><td>Предметное видео, 5 секунд</td></tr>
+<tr><td class="mname">MiniMax H3</td><td>от $0.10/сек</td><td>Видео в 2K</td></tr>
+<tr><td class="mname">Kling 3.0</td><td>от $0.14/сек</td><td>Сложные сцены, мультисценка</td></tr>
+</tbody></table></div>
+</section>
+
+<section>
+<h2>6. Пять вещей, которые ломаются у новичков</h2>
+<div class="tblwrap"><table>
+<thead><tr><th>Ситуация</th><th>Что делать</th></tr></thead>
+<tbody>
+<tr><td>«Генерирую 10 раз, ничего не нравится»</td><td>3 неудачные попытки подряд — смените модель, не повторяйте</td></tr>
+<tr><td>«Цена за $5 ушла за 20 минут»</td><td>Сначала тест на Replicate Try for Free. Пополнять fal.ai только после 2–3 тестов на Replicate</td></tr>
+<tr><td>«Картинка поплыла, изделие не то»</td><td>Это дефект промпта. Сравните результат с паспортом изделия, допишите конкретные признаки</td></tr>
+<tr><td>«Модель вернула пустую ошибку»</td><td>Проверить токен и баланс. Чаще всего — баланс исчерпан или токен с пробелами</td></tr>
+<tr><td>«Не могу зайти с российской карты»</td><td>Это нормально. Используйте aifory pro, Wise или Revolut</td></tr>
+</tbody></table></div>
+</section>
+
+<section>
+<div class="card alert">
+<strong>О деньгах.</strong> Цены сверены 22 октября 2026 года. fal.ai и Replicate меняют цены раз в несколько месяцев, но порядок сохраняется: $0.01–0.05 за картинку, $0.05–0.50 за ролик 5 секунд. Не гонитесь за точными цифрами — ориентируйтесь на порядок. Удвойте ожидаемый расход — это реалистичный бюджет с запасом.
+</div>
+</section>
+
+</main>
+
+<footer><div class="wrap">
+Раздаточный материал №3 к занятию 2 «Визуал + видео для бренда» · 23 октября 2026<br>
+Модели и цены — в <a href="https://mrvolkomorov.github.io/evgenia-models-guide/" target="_blank">раздатке №1</a>, техники правки — в <a href="https://mrvolkomorov.github.io/evgenia-editing-guide/" target="_blank">раздатке №2</a>
+</div></footer>
+</body></html>
